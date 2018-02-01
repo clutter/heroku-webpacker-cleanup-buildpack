@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+readonly BUILD_DIR=$1
+readonly CLEAN_FILES=.slug-post-clean
+
+if [[ ! -n "${BUILD_DIR}" ]]; then
+  echo "no build directory specified"
+  exit 1
+fi
+
+cd ${BUILD_DIR}
+
+echo "deleting 'node_modules'"
+rm -rf node_modules
+
+exit 0

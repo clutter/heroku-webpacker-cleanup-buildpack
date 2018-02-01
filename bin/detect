@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+readonly BUILD_DIR=$1
+
+if [[ ! -n "${BUILD_DIR}" ]]; then
+  echo "no build directory specified"
+  exit 1
+fi
+
+if [[ ! -n "${BUILD_DIR}/node_modules" ]]; then
+  echo "no node_modules specified under the build pack"
+  exit 1
+fi
+
+exit 0
